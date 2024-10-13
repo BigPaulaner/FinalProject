@@ -1,0 +1,2001 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+    
+    
+      
+        <title>App Module - Book Recommendation App Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#app-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Book Recommendation App Documentation" class="md-header__button md-logo" aria-label="Book Recommendation App Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Book Recommendation App Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              App Module
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Book Recommendation App Documentation" class="md-nav__button md-logo" aria-label="Book Recommendation App Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Book Recommendation App Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            API Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    App
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Backend Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Backend Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/database/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Database
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/google_books_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Google Books API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/json_storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JSON Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#app" class="md-nav__link">
+    <span class="md-ellipsis">
+      app
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.app" class="md-nav__link">
+    <span class="md-ellipsis">
+      app
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.add_favorite" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_favorite
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.bookmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      bookmark
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.favorites" class="md-nav__link">
+    <span class="md-ellipsis">
+      favorites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.index" class="md-nav__link">
+    <span class="md-ellipsis">
+      index
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.learnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      learnings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.login" class="md-nav__link">
+    <span class="md-ellipsis">
+      login
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.logout" class="md-nav__link">
+    <span class="md-ellipsis">
+      logout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.register" class="md-nav__link">
+    <span class="md-ellipsis">
+      register
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.remove_favorites_view" class="md-nav__link">
+    <span class="md-ellipsis">
+      remove_favorites_view
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.search" class="md-nav__link">
+    <span class="md-ellipsis">
+      search
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app.update_current_page" class="md-nav__link">
+    <span class="md-ellipsis">
+      update_current_page
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="app-module">App Module</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="app"></a>
+    <div class="doc doc-contents first">
+
+        <p>Book Recommendation App</p>
+<ul>
+<li>This Flask application serves as a front-end for a book recommendation system. </li>
+<li>Users can register, log in, search for books using the Google Books API, and save their favorites. </li>
+<li>Favorites are stored in JSON format, and users can manage them through the app.</li>
+</ul>
+<p>Author: Paul, Tim, Thang
+Date: 06.10.2024
+Version: 0.1.0 (major.minor.bugfix)
+License: Free</p>
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="app.app" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>We used one static hardcoded key, for developing reasons</p>
+    </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="app.add_favorite" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_favorite</span><span class="p">()</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Label: Add Favorite Function</p>
+<p>Short Description:
+Adds selected books to the user's favorites list based on provided details.</p>
+<p>Parameters:
+- None.</p>
+<p>Return:
+- Redirect: Redirects to the favorites page (<code>/favorites</code>) after successfully adding books.
+- Tuple: Returns a message with a status code 400 if no books are selected or data is missing.</p>
+<p>Tests:
+- Test 1: Add Books to Favorites
+  - Input: Call <code>add_favorite()</code> with a POST request containing valid book details.
+  - Expected Outcome: The function adds the selected books to the user's favorites and 
+    redirects to the favorites page.</p>
+<ul>
+<li>Test 2: Add Books without selecting one </li>
+<li>Input: Call <code>add_favorite()</code> with a POST request containing no selected books.</li>
+<li>Expected Outcome: The function logs an error and returns "No books selected to add to favorites".</li>
+</ul>
+
+            <details class="quote">
+              <summary>Source code in <code>app.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/add_favorite&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">add_favorite</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Label: Add Favorite Function</span>
+
+<span class="sd">    Short Description:</span>
+<span class="sd">    Adds selected books to the user&#39;s favorites list based on provided details.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    - None.</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">    - Redirect: Redirects to the favorites page (`/favorites`) after successfully adding books.</span>
+<span class="sd">    - Tuple: Returns a message with a status code 400 if no books are selected or data is missing.</span>
+
+<span class="sd">    Tests:</span>
+<span class="sd">    - Test 1: Add Books to Favorites</span>
+<span class="sd">      - Input: Call `add_favorite()` with a POST request containing valid book details.</span>
+<span class="sd">      - Expected Outcome: The function adds the selected books to the user&#39;s favorites and </span>
+<span class="sd">        redirects to the favorites page.</span>
+
+<span class="sd">    - Test 2: Add Books without selecting one </span>
+<span class="sd">      - Input: Call `add_favorite()` with a POST request containing no selected books.</span>
+<span class="sd">      - Expected Outcome: The function logs an error and returns &quot;No books selected to add to favorites&quot;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">user_id</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span>
+
+    <span class="n">selected_books</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">getlist</span><span class="p">(</span><span class="s1">&#39;selected_books&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">selected_books</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;No books selected to add to favorites.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;No books selected.&quot;</span><span class="p">,</span> <span class="mi">400</span>
+
+    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">selected_books</span><span class="p">:</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;title_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">author</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;author_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">isbn</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;isbn_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">publication_year</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;publication_year_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">category</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;category_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;Uncategorized&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">([</span><span class="n">title</span><span class="p">,</span> <span class="n">author</span><span class="p">,</span> <span class="n">isbn</span><span class="p">,</span> <span class="n">publication_year</span><span class="p">]):</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Missing data for one of the books.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s2">&quot;Missing data for one of the books.&quot;</span><span class="p">,</span> <span class="mi">400</span>
+
+        <span class="c1"># Prepare book details</span>
+        <span class="n">book_details</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+            <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="n">author</span><span class="p">,</span>
+            <span class="s1">&#39;isbn&#39;</span><span class="p">:</span> <span class="n">isbn</span><span class="p">,</span>
+            <span class="s1">&#39;publication_year&#39;</span><span class="p">:</span> <span class="n">publication_year</span><span class="p">,</span>
+            <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="n">category</span>
+        <span class="p">}</span>
+
+        <span class="n">json_storage</span><span class="o">.</span><span class="n">save_favorite</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">book_details</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">&quot;Added favorite book &#39;</span><span class="si">%s</span><span class="s2">&#39; for user </span><span class="si">%s</span><span class="s2">.&quot;</span><span class="p">,</span>
+            <span class="n">title</span><span class="p">,</span> <span class="n">user_id</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/favorites&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="app.bookmark" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">bookmark</span><span class="p">()</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Label: Bookmark Function</p>
+<p>Short Description:
+Displays the user's bookmarked books.</p>
+<p>Parameters:
+- None.</p>
+<p>Return:
+- RenderedTemplate: Displays the <code>bookmarks.html</code> template with the user's bookmarked books.
+- Redirect: Redirects to the login page (<code>/login</code>) if the user is not logged in.</p>
+<p>Tests:
+- Test 1: Display Bookmarks
+  - Input: Call <code>bookmark()</code> with a GET request while logged in.
+  - Expected Outcome: The function retrieves and displays the user's bookmarked books on the <code>bookmarks.html</code> page.</p>
+<ul>
+<li>Test 2: Unauthorized Access to Bookmarks</li>
+<li>Input: Call <code>bookmark()</code> with a GET request without being logged in.</li>
+<li>Expected Outcome: The function logs a warning and redirects the user to the login page.</li>
+</ul>
+
+            <details class="quote">
+              <summary>Source code in <code>app.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span>
+<span class="normal">391</span>
+<span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/bookmark&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">bookmark</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Label: Bookmark Function</span>
+
+<span class="sd">    Short Description:</span>
+<span class="sd">    Displays the user&#39;s bookmarked books.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    - None.</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">    - RenderedTemplate: Displays the `bookmarks.html` template with the user&#39;s bookmarked books.</span>
+<span class="sd">    - Redirect: Redirects to the login page (`/login`) if the user is not logged in.</span>
+
+<span class="sd">    Tests:</span>
+<span class="sd">    - Test 1: Display Bookmarks</span>
+<span class="sd">      - Input: Call `bookmark()` with a GET request while logged in.</span>
+<span class="sd">      - Expected Outcome: The function retrieves and displays the user&#39;s bookmarked books on the `bookmarks.html` page.</span>
+
+<span class="sd">    - Test 2: Unauthorized Access to Bookmarks</span>
+<span class="sd">      - Input: Call `bookmark()` with a GET request without being logged in.</span>
+<span class="sd">      - Expected Outcome: The function logs a warning and redirects the user to the login page.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">user_id</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">user_id</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Unauthorized access to bookmarks.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Load all favorites and filter for the current user</span>
+    <span class="n">all_favorites</span> <span class="o">=</span> <span class="n">json_storage</span><span class="o">.</span><span class="n">load_all_favorites</span><span class="p">()</span>
+    <span class="n">favorites</span> <span class="o">=</span> <span class="n">all_favorites</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">user_id</span><span class="p">),</span> <span class="p">[])</span>
+
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Displayed bookmarks for user </span><span class="si">%s</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">user_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;bookmarks.html&#39;</span><span class="p">,</span> <span class="n">favorites</span><span class="o">=</span><span class="n">favorites</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="app.favorites" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">favorites</span><span class="p">()</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Label: Favorites Function</p>
+<p>Short Description:
+Displays the user's favorite books, optionally filtered by a selected category.</p>
+<p>Parameters:
+- None.</p>
+<p>Return:
+- RenderedTemplate: Displays the <code>favorites.html</code> template with the user's favorite books.
+  If a category filter is applied, only favorites matching the category are shown.</p>
+<p>Tests:
+- Test 1: Display All Favorites
+  - Input: Call <code>favorites()</code> with a GET request without any category filter.
+  - Expected Outcome: The function displays all favorite books for the logged-in user.</p>
+<ul>
+<li>Test 2: Display Favorites by Category</li>
+<li>Input: Call <code>favorites()</code> with a GET request including a category filter.</li>
+<li>Expected Outcome: The function filters the user's favorites by the specified category 
+    and displays only the matching books.</li>
+</ul>
+
+            <details class="quote">
+              <summary>Source code in <code>app.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/favorites&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">favorites</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Label: Favorites Function</span>
+
+<span class="sd">    Short Description:</span>
+<span class="sd">    Displays the user&#39;s favorite books, optionally filtered by a selected category.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    - None.</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">    - RenderedTemplate: Displays the `favorites.html` template with the user&#39;s favorite books.</span>
+<span class="sd">      If a category filter is applied, only favorites matching the category are shown.</span>
+
+<span class="sd">    Tests:</span>
+<span class="sd">    - Test 1: Display All Favorites</span>
+<span class="sd">      - Input: Call `favorites()` with a GET request without any category filter.</span>
+<span class="sd">      - Expected Outcome: The function displays all favorite books for the logged-in user.</span>
+
+<span class="sd">    - Test 2: Display Favorites by Category</span>
+<span class="sd">      - Input: Call `favorites()` with a GET request including a category filter.</span>
+<span class="sd">      - Expected Outcome: The function filters the user&#39;s favorites by the specified category </span>
+<span class="sd">        and displays only the matching books.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">user_id</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Load all favorites and filter only the current user&#39;s favorites</span>
+    <span class="n">all_favorites</span> <span class="o">=</span> <span class="n">json_storage</span><span class="o">.</span><span class="n">load_all_favorites</span><span class="p">()</span>
+    <span class="n">favorites_json</span> <span class="o">=</span> <span class="n">all_favorites</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">user_id</span><span class="p">),</span> <span class="p">[])</span>
+
+    <span class="c1"># Optional: Filter by category</span>
+    <span class="n">category_filter</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">category_filter</span><span class="p">:</span>
+        <span class="n">favorites_json</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">book</span> <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">favorites_json</span> <span class="k">if</span> <span class="n">book</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">category_filter</span>
+        <span class="p">]</span>
+
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="s2">&quot;Favorites displayed for user </span><span class="si">%s</span><span class="s2"> with category filter &#39;</span><span class="si">%s</span><span class="s2">&#39;.&quot;</span><span class="p">,</span>
+        <span class="n">user_id</span><span class="p">,</span> <span class="n">category_filter</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;favorites.html&#39;</span><span class="p">,</span> <span class="n">favorites</span><span class="o">=</span><span class="n">favorites_json</span><span class="p">,</span> <span class="n">category_filter</span><span class="o">=</span><span class="n">category_filter</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="app.index" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">index</span><span class="p">()</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Label: Index Function</p>
+<p>Short Description:
+Displays the homepage with streak information if the user is logged in.
+Redirects to the registration page if no user is logged in.</p>
+<p>Parameters:
+- None.</p>
+<p>Return:
+- Redirect or RenderedTemplate: Redirects to registration if no user is logged in.
+  Otherwise, it renders the homepage (<code>index.html</code>) with optional streak data.</p>
+<p>Tests:
+- Test 1: User Logged In
+  - Input: User ID is present in the session.
+  - Expected Outcome: Retrieves the user's streak data and renders the homepage with this information.</p>
+<ul>
+<li>Test 2: User Not Logged In</li>
+<li>Input: No user ID present in the session.</li>
+<li>Expected Outcome: Redirects the user to the registration page.</li>
+</ul>
+
+            <details class="quote">
+              <summary>Source code in <code>app.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Label: Index Function</span>
+
+<span class="sd">    Short Description:</span>
+<span class="sd">    Displays the homepage with streak information if the user is logged in.</span>
+<span class="sd">    Redirects to the registration page if no user is logged in.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    - None.</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">    - Redirect or RenderedTemplate: Redirects to registration if no user is logged in.</span>
+<span class="sd">      Otherwise, it renders the homepage (`index.html`) with optional streak data.</span>
+
+<span class="sd">    Tests:</span>
+<span class="sd">    - Test 1: User Logged In</span>
+<span class="sd">      - Input: User ID is present in the session.</span>
+<span class="sd">      - Expected Outcome: Retrieves the user&#39;s streak data and renders the homepage with this information.</span>
+
+<span class="sd">    - Test 2: User Not Logged In</span>
+<span class="sd">      - Input: No user ID present in the session.</span>
+<span class="sd">      - Expected Outcome: Redirects the user to the registration page.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">user_id</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Check if the user is logged in</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">user_id</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Unauthenticated access attempt to the homepage. Redirecting to registration.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/register&#39;</span><span class="p">)</span>
+
+    <span class="c1"># If the user is logged in, retrieve their streak data</span>
+    <span class="n">streak_data</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="n">get_user_streak_data</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">streak_data</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Displayed streak data for user ID: </span><span class="si">%s</span><span class="s2"> with current streak: </span><span class="si">%d</span><span class="s2"> days, longest streak: </span><span class="si">%d</span><span class="s2"> days.&quot;</span><span class="p">,</span>
+                     <span class="n">user_id</span><span class="p">,</span> <span class="n">streak_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;current_streak&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">streak_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;longest_streak&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;User ID </span><span class="si">%s</span><span class="s2"> is logged in, but no streak data found.&quot;</span><span class="p">,</span> <span class="n">user_id</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="n">streak_data</span><span class="o">=</span><span class="n">streak_data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="app.learnings" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">learnings</span><span class="p">()</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Label: Learnings Function</p>
+<p>Short Description:
+Displays and saves learning notes for a user's favorite books.</p>
+<p>Parameters:
+- None.</p>
+<p>Return:
+- RenderedTemplate: Renders the <code>learnings.html</code> template with the user's favorites and saved notes.
+- Redirect: Redirects to the login page (<code>/login</code>) if the user is not logged in.
+- Redirect: Redirects back to the learnings page after saving notes.</p>
+<p>Tests:
+- Test 1: Display Learnings
+  - Input: Call <code>learnings()</code> with a GET request while logged in.
+  - Expected Outcome: The function retrieves and displays the user's favorite books and any saved learning notes.</p>
+<ul>
+<li>Test 2: Save Learning Note</li>
+<li>Input: Call <code>learnings()</code> with a POST request containing a book ISBN and a learning note.</li>
+<li>Expected Outcome: The function saves the note for the specified book, logs the action, 
+    and redirects to the <code>learnings</code> page.</li>
+</ul>
+
+            <details class="quote">
+              <summary>Source code in <code>app.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">488</span>
+<span class="normal">489</span>
+<span class="normal">490</span>
+<span class="normal">491</span>
+<span class="normal">492</span>
+<span class="normal">493</span>
+<span class="normal">494</span>
+<span class="normal">495</span>
+<span class="normal">496</span>
+<span class="normal">497</span>
+<span class="normal">498</span>
+<span class="normal">499</span>
+<span class="normal">500</span>
+<span class="normal">501</span>
+<span class="normal">502</span>
+<span class="normal">503</span>
+<span class="normal">504</span>
+<span class="normal">505</span>
+<span class="normal">506</span>
+<span class="normal">507</span>
+<span class="normal">508</span>
+<span class="normal">509</span>
+<span class="normal">510</span>
+<span class="normal">511</span>
+<span class="normal">512</span>
+<span class="normal">513</span>
+<span class="normal">514</span>
+<span class="normal">515</span>
+<span class="normal">516</span>
+<span class="normal">517</span>
+<span class="normal">518</span>
+<span class="normal">519</span>
+<span class="normal">520</span>
+<span class="normal">521</span>
+<span class="normal">522</span>
+<span class="normal">523</span>
+<span class="normal">524</span>
+<span class="normal">525</span>
+<span class="normal">526</span>
+<span class="normal">527</span>
+<span class="normal">528</span>
+<span class="normal">529</span>
+<span class="normal">530</span>
+<span class="normal">531</span>
+<span class="normal">532</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/learnings&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">learnings</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Label: Learnings Function</span>
+
+<span class="sd">    Short Description:</span>
+<span class="sd">    Displays and saves learning notes for a user&#39;s favorite books.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    - None.</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">    - RenderedTemplate: Renders the `learnings.html` template with the user&#39;s favorites and saved notes.</span>
+<span class="sd">    - Redirect: Redirects to the login page (`/login`) if the user is not logged in.</span>
+<span class="sd">    - Redirect: Redirects back to the learnings page after saving notes.</span>
+
+<span class="sd">    Tests:</span>
+<span class="sd">    - Test 1: Display Learnings</span>
+<span class="sd">      - Input: Call `learnings()` with a GET request while logged in.</span>
+<span class="sd">      - Expected Outcome: The function retrieves and displays the user&#39;s favorite books and any saved learning notes.</span>
+
+<span class="sd">    - Test 2: Save Learning Note</span>
+<span class="sd">      - Input: Call `learnings()` with a POST request containing a book ISBN and a learning note.</span>
+<span class="sd">      - Expected Outcome: The function saves the note for the specified book, logs the action, </span>
+<span class="sd">        and redirects to the `learnings` page.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">user_id</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">user_id</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Unauthorized access to learnings.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="n">book_isbn</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;book_isbn&#39;</span><span class="p">]</span>
+        <span class="n">learning</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;learning&#39;</span><span class="p">]</span>
+
+        <span class="n">json_storage</span><span class="o">.</span><span class="n">save_learning</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">book_isbn</span><span class="p">,</span> <span class="n">learning</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">&quot;Saved learning for book with ISBN </span><span class="si">%s</span><span class="s2"> for user </span><span class="si">%s</span><span class="s2">.&quot;</span><span class="p">,</span>
+            <span class="n">book_isbn</span><span class="p">,</span> <span class="n">user_id</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/learnings&#39;</span><span class="p">)</span>
+
+    <span class="n">favorites</span> <span class="o">=</span> <span class="n">json_storage</span><span class="o">.</span><span class="n">load_user_favorites</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;learnings.html&#39;</span><span class="p">,</span> <span class="n">favorites</span><span class="o">=</span><span class="n">favorites</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="app.login" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">login</span><span class="p">()</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Label: Login Function</p>
+<p>Short Description:
+Handles user login by displaying the login form and authenticating user credentials.</p>
+<p>Parameters:
+- None.</p>
+<p>Return:
+- RenderedTemplate: Displays the login form (<code>login.html</code>) if the request method is GET.
+- Redirect: Redirects to the homepage (<code>/</code>) if login is successful (POST request).
+- String: Returns an error message if login fails due to incorrect username or password.</p>
+<p>Tests:
+- Test 1: Display Login Form
+  - Input: Call <code>login()</code> with a GET request.
+  - Expected Outcome: The function returns the <code>login.html</code> template for the user to fill out.</p>
+<ul>
+<li>Test 2: Successful Login</li>
+<li>Input: Call <code>login()</code> with a POST request containing valid username and password.</li>
+<li>Expected Outcome: The function authenticates the user, sets the session with the user ID, and redirects to the homepage.</li>
+</ul>
+
+            <details class="quote">
+              <summary>Source code in <code>app.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">login</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Label: Login Function</span>
+
+<span class="sd">    Short Description:</span>
+<span class="sd">    Handles user login by displaying the login form and authenticating user credentials.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    - None.</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">    - RenderedTemplate: Displays the login form (`login.html`) if the request method is GET.</span>
+<span class="sd">    - Redirect: Redirects to the homepage (`/`) if login is successful (POST request).</span>
+<span class="sd">    - String: Returns an error message if login fails due to incorrect username or password.</span>
+
+<span class="sd">    Tests:</span>
+<span class="sd">    - Test 1: Display Login Form</span>
+<span class="sd">      - Input: Call `login()` with a GET request.</span>
+<span class="sd">      - Expected Outcome: The function returns the `login.html` template for the user to fill out.</span>
+
+<span class="sd">    - Test 2: Successful Login</span>
+<span class="sd">      - Input: Call `login()` with a POST request containing valid username and password.</span>
+<span class="sd">      - Expected Outcome: The function authenticates the user, sets the session with the user ID, and redirects to the homepage.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span>
+        <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span>
+
+        <span class="c1"># Authenticate the user</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="n">authenticate_user</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">user</span><span class="p">:</span>
+            <span class="n">session</span><span class="p">[</span><span class="s1">&#39;user_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Store user ID in session</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;User &#39;</span><span class="si">%s</span><span class="s2">&#39; logged in successfully.&quot;</span><span class="p">,</span> <span class="n">username</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+
+        <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Login attempt failed for username &#39;</span><span class="si">%s</span><span class="s2">&#39;.&quot;</span><span class="p">,</span> <span class="n">username</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;Login failed. Please check your username and password.&#39;</span>
+
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Login form accessed.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;login.html&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="app.logout" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">logout</span><span class="p">()</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Label: Logout Function</p>
+<p>Short Description:
+Logs out the current user by removing their session data and redirects them to the homepage.</p>
+<p>Parameters:
+- None.</p>
+<p>Return:
+- Redirect: Redirects the user to the homepage (<code>/</code>).</p>
+<p>Tests:
+- Test 1: User Logout
+  - Input: Call <code>logout()</code> with a user currently logged in.
+  - Expected Outcome: The user session is cleared, and the user is redirected to the homepage.</p>
+<ul>
+<li>Test 2: Logout Without Active Session</li>
+<li>Input: Call <code>logout()</code> when no user is logged in.</li>
+<li>Expected Outcome: The function executes without error and redirects to the homepage.</li>
+</ul>
+
+            <details class="quote">
+              <summary>Source code in <code>app.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/logout&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">logout</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Label: Logout Function</span>
+
+<span class="sd">    Short Description:</span>
+<span class="sd">    Logs out the current user by removing their session data and redirects them to the homepage.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    - None.</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">    - Redirect: Redirects the user to the homepage (`/`).</span>
+
+<span class="sd">    Tests:</span>
+<span class="sd">    - Test 1: User Logout</span>
+<span class="sd">      - Input: Call `logout()` with a user currently logged in.</span>
+<span class="sd">      - Expected Outcome: The user session is cleared, and the user is redirected to the homepage.</span>
+
+<span class="sd">    - Test 2: Logout Without Active Session</span>
+<span class="sd">      - Input: Call `logout()` when no user is logged in.</span>
+<span class="sd">      - Expected Outcome: The function executes without error and redirects to the homepage.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;User logged out.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="app.register" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">register</span><span class="p">()</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Label: Register Function</p>
+<p>Short Description:
+Handles user registration by displaying the registration form and processing user input to create a new account.</p>
+<p>Parameters:
+- None.</p>
+<p>Return:
+- RenderedTemplate: Displays the registration form (<code>register.html</code>) if the request method is GET or if registration fails.
+- Redirect: Redirects to the login page (<code>/login</code>) if registration is successful (POST request).</p>
+<p>Tests:</p>
+<ul>
+<li>Test 1: Successful Registration</li>
+<li>Input: Call <code>register()</code> with a POST request containing a valid username and password.</li>
+<li>
+<p>Expected Outcome: The function registers the user, saves their credentials, and redirects to the <code>/login</code> page.</p>
+</li>
+<li>
+<p>Test 2: Duplicate Registration</p>
+</li>
+<li>Input: Call <code>register()</code> with a POST request using a username that already exists.</li>
+<li>Expected Outcome: The function displays an error message in the <code>register.html</code> template.</li>
+</ul>
+
+            <details class="quote">
+              <summary>Source code in <code>app.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/register&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">register</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Label: Register Function</span>
+
+<span class="sd">    Short Description:</span>
+<span class="sd">    Handles user registration by displaying the registration form and processing user input to create a new account.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    - None.</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">    - RenderedTemplate: Displays the registration form (`register.html`) if the request method is GET or if registration fails.</span>
+<span class="sd">    - Redirect: Redirects to the login page (`/login`) if registration is successful (POST request).</span>
+
+<span class="sd">    Tests:</span>
+
+<span class="sd">    - Test 1: Successful Registration</span>
+<span class="sd">      - Input: Call `register()` with a POST request containing a valid username and password.</span>
+<span class="sd">      - Expected Outcome: The function registers the user, saves their credentials, and redirects to the `/login` page.</span>
+
+<span class="sd">    - Test 2: Duplicate Registration</span>
+<span class="sd">      - Input: Call `register()` with a POST request using a username that already exists.</span>
+<span class="sd">      - Expected Outcome: The function displays an error message in the `register.html` template.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span>
+        <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span>
+
+        <span class="c1"># Attempt to register the user and check the result</span>
+        <span class="n">registration_success</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="n">register_user</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">registration_success</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;User &#39;</span><span class="si">%s</span><span class="s2">&#39; registered successfully.&quot;</span><span class="p">,</span> <span class="n">username</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Show an error message if registration failed due to a duplicate username</span>
+            <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;register.html&#39;</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="s2">&quot;Username already exists. Please choose another one.&quot;</span><span class="p">)</span>
+
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Registration form accessed.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;register.html&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="app.remove_favorites_view" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">remove_favorites_view</span><span class="p">()</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Label: Remove Favorites Function</p>
+<p>Short Description:
+Handles removing selected favorite books for a user based on provided ISBNs.</p>
+<p>Parameters:
+- None.</p>
+<p>Return:
+- Redirect: Redirects to the favorites page (<code>/favorites</code>) after successful removal.
+- Redirect: Redirects to the login page (<code>/login</code>) if the user is not logged in.</p>
+<p>Tests:
+- Test 1: Remove Selected Favorites
+  - Input: Call <code>remove_favorites_view()</code> with a POST request and a list of selected ISBNs.
+  - Expected Outcome: The function removes the books with the provided ISBNs from the user's favorites 
+    and redirects to the favorites page.</p>
+<ul>
+<li>Test 2: Unauthorized Removal Attempt</li>
+<li>Input: Call <code>remove_favorites_view()</code> without being logged in.</li>
+<li>Expected Outcome: The function logs a warning and redirects the user to the login page.</li>
+</ul>
+
+            <details class="quote">
+              <summary>Source code in <code>app.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/remove_favorites&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">remove_favorites_view</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Label: Remove Favorites Function</span>
+
+<span class="sd">    Short Description:</span>
+<span class="sd">    Handles removing selected favorite books for a user based on provided ISBNs.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    - None.</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">    - Redirect: Redirects to the favorites page (`/favorites`) after successful removal.</span>
+<span class="sd">    - Redirect: Redirects to the login page (`/login`) if the user is not logged in.</span>
+
+<span class="sd">    Tests:</span>
+<span class="sd">    - Test 1: Remove Selected Favorites</span>
+<span class="sd">      - Input: Call `remove_favorites_view()` with a POST request and a list of selected ISBNs.</span>
+<span class="sd">      - Expected Outcome: The function removes the books with the provided ISBNs from the user&#39;s favorites </span>
+<span class="sd">        and redirects to the favorites page.</span>
+
+<span class="sd">    - Test 2: Unauthorized Removal Attempt</span>
+<span class="sd">      - Input: Call `remove_favorites_view()` without being logged in.</span>
+<span class="sd">      - Expected Outcome: The function logs a warning and redirects the user to the login page.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="s1">&#39;user_id&#39;</span> <span class="ow">in</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">user_id</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s1">&#39;user_id&#39;</span><span class="p">]</span>
+        <span class="n">selected_isbns</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">getlist</span><span class="p">(</span><span class="s1">&#39;selected_books&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">selected_isbns</span><span class="p">:</span>
+            <span class="n">json_storage</span><span class="o">.</span><span class="n">remove_favorites</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">selected_isbns</span><span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;Removed favorites for user </span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">selected_isbns</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;favorites&#39;</span><span class="p">))</span>
+
+    <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Unauthorized attempt to remove favorites.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="app.search" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">search</span><span class="p">()</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Label: Search Function</p>
+<p>Short Description:
+Displays the search form and processes the user's search query to find books 
+using the Google Books API.</p>
+<p>Parameters:
+- None.</p>
+<p>Return:
+- RenderedTemplate: Displays the search results page (<code>results.html</code>) if the request method is POST 
+  and the search is successful.
+- RenderedTemplate: Displays the search form (<code>search.html</code>) if the request method is GET.
+- Redirect: Redirects to the login page (<code>/login</code>) if the user is not logged in.</p>
+<p>Tests:
+- Test 1: Display Search Form
+  - Input: Call <code>search()</code> with a GET request while logged in.
+  - Expected Outcome: The function returns the <code>search.html</code> template for the user to enter search criteria.</p>
+<ul>
+<li>Test 2: Search Books with Valid Input</li>
+<li>Input: Call <code>search()</code> with a POST request containing a valid field of interest and specific topic.</li>
+<li>Expected Outcome: The function retrieves books from the Google Books API, logs the search action, and 
+    displays the <code>results.html</code> template with the search results.</li>
+</ul>
+
+            <details class="quote">
+              <summary>Source code in <code>app.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/search&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">search</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Label: Search Function</span>
+
+<span class="sd">    Short Description:</span>
+<span class="sd">    Displays the search form and processes the user&#39;s search query to find books </span>
+<span class="sd">    using the Google Books API.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    - None.</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">    - RenderedTemplate: Displays the search results page (`results.html`) if the request method is POST </span>
+<span class="sd">      and the search is successful.</span>
+<span class="sd">    - RenderedTemplate: Displays the search form (`search.html`) if the request method is GET.</span>
+<span class="sd">    - Redirect: Redirects to the login page (`/login`) if the user is not logged in.</span>
+
+<span class="sd">    Tests:</span>
+<span class="sd">    - Test 1: Display Search Form</span>
+<span class="sd">      - Input: Call `search()` with a GET request while logged in.</span>
+<span class="sd">      - Expected Outcome: The function returns the `search.html` template for the user to enter search criteria.</span>
+
+<span class="sd">    - Test 2: Search Books with Valid Input</span>
+<span class="sd">      - Input: Call `search()` with a POST request containing a valid field of interest and specific topic.</span>
+<span class="sd">      - Expected Outcome: The function retrieves books from the Google Books API, logs the search action, and </span>
+<span class="sd">        displays the `results.html` template with the search results.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="s1">&#39;user_id&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Unauthorized access to search page.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">)</span>  <span class="c1"># User must be logged in</span>
+
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="n">field_of_interest</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;field&#39;</span><span class="p">]</span>
+        <span class="n">specific_topic</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;topic&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Retrieve books from the Google Books API based on search criteria</span>
+        <span class="n">books</span> <span class="o">=</span> <span class="n">google_books_api</span><span class="o">.</span><span class="n">search_books</span><span class="p">(</span><span class="n">field_of_interest</span><span class="p">,</span> <span class="n">specific_topic</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">&quot;Search query &#39;</span><span class="si">%s</span><span class="s2">&#39; with topic &#39;</span><span class="si">%s</span><span class="s2">&#39; returned </span><span class="si">%d</span><span class="s2"> results.&quot;</span><span class="p">,</span>
+            <span class="n">field_of_interest</span><span class="p">,</span> <span class="n">specific_topic</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">books</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;results.html&#39;</span><span class="p">,</span> <span class="n">books</span><span class="o">=</span><span class="n">books</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="n">field_of_interest</span><span class="p">)</span>
+
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Search form accessed.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;search.html&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="app.update_current_page" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">update_current_page</span><span class="p">()</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Label: Update Favorite Page Function</p>
+<p>Short Description:
+Updates the current page for a user's favorite book and updates the user's reading streak.</p>
+<p>Parameters:
+- None.</p>
+<p>Return:
+- RenderedTemplate: Renders the <code>bookmarks.html</code> template with the updated favorites list.
+- Redirect: Redirects to the login page (<code>/login</code>) if the user is not logged in.
+- Tuple: Returns a message with a 400 status code if the provided page number is invalid.</p>
+<p>Tests:
+- Test 1: Update Favorite Page with Valid Data
+  - Input: Call <code>update_current_page()</code> with a valid book ISBN and page number.
+  - Expected Outcome: The function updates the book's current page, updates the reading streak, 
+    and displays the updated bookmarks.</p>
+<ul>
+<li>Test 2: Unauthorized Access</li>
+<li>Input: Call <code>update_current_page()</code> an user is not logged in.</li>
+<li>Expected Outcome: The function redirects the user to the login page (<code>/login</code>)</li>
+</ul>
+
+            <details class="quote">
+              <summary>Source code in <code>app.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span>
+<span class="normal">446</span>
+<span class="normal">447</span>
+<span class="normal">448</span>
+<span class="normal">449</span>
+<span class="normal">450</span>
+<span class="normal">451</span>
+<span class="normal">452</span>
+<span class="normal">453</span>
+<span class="normal">454</span>
+<span class="normal">455</span>
+<span class="normal">456</span>
+<span class="normal">457</span>
+<span class="normal">458</span>
+<span class="normal">459</span>
+<span class="normal">460</span>
+<span class="normal">461</span>
+<span class="normal">462</span>
+<span class="normal">463</span>
+<span class="normal">464</span>
+<span class="normal">465</span>
+<span class="normal">466</span>
+<span class="normal">467</span>
+<span class="normal">468</span>
+<span class="normal">469</span>
+<span class="normal">470</span>
+<span class="normal">471</span>
+<span class="normal">472</span>
+<span class="normal">473</span>
+<span class="normal">474</span>
+<span class="normal">475</span>
+<span class="normal">476</span>
+<span class="normal">477</span>
+<span class="normal">478</span>
+<span class="normal">479</span>
+<span class="normal">480</span>
+<span class="normal">481</span>
+<span class="normal">482</span>
+<span class="normal">483</span>
+<span class="normal">484</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/update_current_page&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">update_current_page</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Label: Update Favorite Page Function</span>
+
+<span class="sd">    Short Description:</span>
+<span class="sd">    Updates the current page for a user&#39;s favorite book and updates the user&#39;s reading streak.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    - None.</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">    - RenderedTemplate: Renders the `bookmarks.html` template with the updated favorites list.</span>
+<span class="sd">    - Redirect: Redirects to the login page (`/login`) if the user is not logged in.</span>
+<span class="sd">    - Tuple: Returns a message with a 400 status code if the provided page number is invalid.</span>
+
+<span class="sd">    Tests:</span>
+<span class="sd">    - Test 1: Update Favorite Page with Valid Data</span>
+<span class="sd">      - Input: Call `update_current_page()` with a valid book ISBN and page number.</span>
+<span class="sd">      - Expected Outcome: The function updates the book&#39;s current page, updates the reading streak, </span>
+<span class="sd">        and displays the updated bookmarks.</span>
+
+<span class="sd">    - Test 2: Unauthorized Access</span>
+<span class="sd">      - Input: Call `update_current_page()` an user is not logged in.</span>
+<span class="sd">      - Expected Outcome: The function redirects the user to the login page (`/login`)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">user_id</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">user_id</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Unauthorized attempt to update favorite page.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">)</span>  <span class="c1"># User must be logged in</span>
+
+    <span class="c1"># Get data from the form</span>
+    <span class="n">book_isbn</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;book_isbn&#39;</span><span class="p">]</span>
+    <span class="n">current_page</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;current_page&#39;</span><span class="p">]</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">current_page</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">current_page</span><span class="p">)</span>  <span class="c1"># Ensure page number is a valid integer</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Invalid page number &#39;</span><span class="si">%s</span><span class="s2">&#39; provided.&quot;</span><span class="p">,</span> <span class="n">current_page</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;Invalid page number&quot;</span><span class="p">,</span> <span class="mi">400</span>
+
+    <span class="c1"># Update the current page in the JSON file</span>
+    <span class="n">json_storage</span><span class="o">.</span><span class="n">update_current_page</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">book_isbn</span><span class="p">,</span> <span class="n">current_page</span><span class="p">)</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="s2">&quot;Updated page to </span><span class="si">%d</span><span class="s2"> for book with ISBN </span><span class="si">%s</span><span class="s2"> for user </span><span class="si">%s</span><span class="s2">.&quot;</span><span class="p">,</span>
+        <span class="n">current_page</span><span class="p">,</span> <span class="n">book_isbn</span><span class="p">,</span> <span class="n">user_id</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Update the user&#39;s reading streak</span>
+    <span class="n">database</span><span class="o">.</span><span class="n">update_reading_streak</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+
+    <span class="c1"># Reload the page with the updated data</span>
+    <span class="n">favorites</span> <span class="o">=</span> <span class="n">json_storage</span><span class="o">.</span><span class="n">load_user_favorites</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;bookmarks.html&#39;</span><span class="p">,</span> <span class="n">favorites</span><span class="o">=</span><span class="n">favorites</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+    
+  </body>
+</html>
